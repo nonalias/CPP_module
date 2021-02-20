@@ -1,6 +1,6 @@
-#include "phonebook.hpp"
+#include "includes/phonebook.hpp"
 
-PhoneBook	pb[8];
+Contact	pb[8];
 int			idx = 0;
 std::string	title[11] = {"first name", "last name", "nickname",
 	"login", "postal address", "email address", "phone number",
@@ -8,7 +8,7 @@ std::string	title[11] = {"first name", "last name", "nickname",
 	"darkest_secret"};
 
 
-void show(PhoneBook pb[])
+void show(Contact pb[])
 {
 	std::cout << "---------------------------------------------\n";
 	std::cout << "|     index|first name| last name|  nickname|\n";
@@ -18,7 +18,7 @@ void show(PhoneBook pb[])
 
 int		check_only_num(std::string str)
 {
-	for (int i = 0; i < str.size(); i++)
+	for (int i = 0; i < (int)str.size(); i++)
 	{
 		if (str[i] < '0' || str[i] > '9')
 			return (0);

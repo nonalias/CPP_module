@@ -7,6 +7,6 @@
 #define FIRST_NAME 0
 #define LAST_NAME 1
 #define NICK_NAME 2
-#include "PhoneBookClass.hpp"
+#include "Contact.hpp"
 
 #endif

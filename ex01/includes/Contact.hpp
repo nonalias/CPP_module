@@ -1,12 +1,12 @@
-#ifndef __PHONE_BOOK_CLASS_HPP
-#define __PHONE_BOOK_CLASS_HPP
+#ifndef __CONTACT_HPP
+#define __CONTACT_HPP
 #include "phonebook.hpp"
 
-class	PhoneBook {
+class	Contact {
 	private:
 		std::string datas[11];
 	public:
-		PhoneBook();
+		Contact();
 		void set(std::string datas[11]);
 		void data_print(std::string str);
 		void white_print(int count);

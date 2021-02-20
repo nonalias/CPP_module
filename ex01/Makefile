@@ -1,17 +1,21 @@
 NAME	=	phonebook
 CC		=	g++
 CFLAGS	=	-Wall -Wextra -Werror
-HDR		=
-SRCS	=	phonebook.cpp
+HDR	=	includes
+	
+
+SRCS	=	phonebook.cpp \
+		Contact.cpp \
+
 OBJS	=	$(SRCS:%.cpp=%.o)
 
 all		:	$(NAME)
 
 $(NAME)	:	$(OBJS)
-	$(CC) $(CFLAGS) $(HDR) -o $@ $(OBJS)
+	$(CC) $(CFLAGS) -I $(HDR) $(OBJS) -o $@ 
 
 %.o		:	%.cpp
-	$(CC) $(CFLAGS) $(HDR) -o $@ -c $<
+	$(CC) $(CFLAGS)  -o $@ -c $<
 
 clean	:
 	rm -f $(OBJS)

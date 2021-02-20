@@ -1,14 +1,14 @@
-#include "PhoneBookClass.hpp"
+#include "includes/Contact.hpp"
 
-PhoneBook::PhoneBook(){}
+Contact::Contact(){}
 
-void PhoneBook::set(std::string datas[11])
+void Contact::set(std::string datas[11])
 {
 	for (int i = 0; i < 11; i++)
 		this->datas[i] = datas[i];
 }
 
-void PhoneBook::data_print(std::string str)
+void Contact::data_print(std::string str)
 {
 	if (str.size() >= 10)
 		str[9] = '.';
@@ -16,13 +16,13 @@ void PhoneBook::data_print(std::string str)
 		std::cout << str[i];
 }
 
-void PhoneBook::white_print(int count)
+void Contact::white_print(int count)
 {
 	for (int i = 0; i < count; i++)
 		std::cout << ' ';
 }
 
-void PhoneBook::detail_show(std::string title[11], int input)
+void Contact::detail_show(std::string title[11], int input)
 {
 	std::string str_input;
 
@@ -50,7 +50,7 @@ void PhoneBook::detail_show(std::string title[11], int input)
 	}
 }
 
-void PhoneBook::select_show(int input)
+void Contact::select_show(int input)
 {
 	std::cout << "---------------------------------------------\n";
 	brief_show(input);
@@ -58,7 +58,7 @@ void PhoneBook::select_show(int input)
 }
 
 
-void PhoneBook::brief_show(int input)
+void Contact::brief_show(int input)
 {
 	std::string str_input;
 
