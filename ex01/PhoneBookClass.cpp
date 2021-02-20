@@ -12,7 +12,7 @@ void PhoneBook::data_print(std::string str)
 {
 	if (str.size() >= 10)
 		str[9] = '.';
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 10 && str[i]; i++)
 		std::cout << str[i];
 }
 

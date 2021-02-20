@@ -16,6 +16,16 @@ void show(PhoneBook pb[])
 		pb[i].select_show(i);
 }
 
+int		check_only_num(std::string str)
+{
+	for (int i = 0; i < str.size(); i++)
+	{
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
+	}
+	return (1);
+}
+
 void	run(std::string command)
 {
 	std::string datas[11];
@@ -38,7 +48,8 @@ void	run(std::string command)
 	}
 	else if (command == "SEARCH")
 	{
-		int input;
+		int input = -1;
+		std::string s_input;
 
 		if (idx == 0)
 		{
@@ -46,13 +57,16 @@ void	run(std::string command)
 			return ;
 		}
 		show(pb);
-		std::cout << "\nplease input index (0 ~ " << idx - 1<< ") : ";
-		std::cin >> input;
-		while (input < 0 || input >= idx)
+		std::cin.ignore();
+		while (!check_only_num(s_input) || (input < 0 || input >= idx))
 		{
 			std::cout << "\n\033[31mYou should input right range of index!\033[0m\n\n";
 			std::cout << "\nplease input index (0 ~ " << idx - 1<< ") : ";
-			std::cin >> input;
+			getline(std::cin, s_input);
+			if (check_only_num(s_input))
+				input = stoi(s_input);
+			else
+				input = -1;
 		}
 		pb[input].detail_show(title, input);
 	}
