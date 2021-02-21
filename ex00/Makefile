@@ -24,7 +24,7 @@ $(NAME)	:	$(OBJS)
 	$(CC) $(CFLAGS) $(HDR) -o $@ $(OBJS)
 
 %.o		:	%.cpp
-	$(CC) $(CFLAGS) $(HDR) -o $@ -c $<
+	$(CC) $(CFLAGS) -o $@ -c $<
 
 clean	:
 	rm -f $(OBJS)
